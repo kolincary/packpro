@@ -1,0 +1,11 @@
+{
+  "name": "NEW PackGuard Warehouse Video Packing PWA",
+  "description": "PWA video packing gudang berbasis Supabase PostgreSQL \u0026 Cloudflare R2 dengan kompresi 720p 25fps, IndexedDB offline upload queue, dan scan resi barcode.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

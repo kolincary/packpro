@@ -1,0 +1,4 @@
+# Netlify redirects file for SPA & Serverless API routing
+/api/cloudflare/r2-upload  /.netlify/functions/r2-upload  200
+/api/video-play           /.netlify/functions/video-play  200
+/*                        /index.html                     200
