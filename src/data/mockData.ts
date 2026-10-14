@@ -152,6 +152,15 @@ ON CONFLICT (username) DO NOTHING;
 ALTER TABLE public.packing_logs ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Public Read Access" ON public.packing_logs FOR SELECT USING (true);
 CREATE POLICY "Authenticated Insert" ON public.packing_logs FOR INSERT WITH CHECK (true);
+
+-- Grant API access to public schema for anon and authenticated roles
+GRANT USAGE ON SCHEMA public TO anon, authenticated;
+GRANT ALL ON ALL TABLES IN SCHEMA public TO anon, authenticated;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO anon, authenticated;
+GRANT ALL ON ALL ROUTINES IN SCHEMA public TO anon, authenticated;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO anon, authenticated;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO anon, authenticated;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON ROUTINES TO anon, authenticated;
 `;
 
 export const INITIAL_CONFIG: CloudflareConfig = {
@@ -160,8 +169,8 @@ export const INITIAL_CONFIG: CloudflareConfig = {
   r2AccessKeyId: '3ee23b57c409595f1c26f7ae30cc86b6',
   r2SecretKey: 'cbc1ddc8e0ec83688e9a43c1afe66f8474ade4fc573c8ce7a05de34468392577',
   d1DatabaseId: 'db-a92c-4701-9981-d108f921a91e',
-  supabaseUrl: 'https://zyhkgasqwcmpxydndbzw.supabase.co',
-  supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp5aGtnYXNxd2NtcHh5ZG5kYnp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk4NTYwMDAsImV4cCI6MjAyNTQzMjAwMH0.sampleKeyHash',
+  supabaseUrl: 'https://hzcrmjmtheybcsbaxzmt.supabase.co',
+  supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh6Y3Jtam10aGV5YmNzYmF4em10Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE5Mjk4NzcsImV4cCI6MjEwNzUwNTg3N30.9fSfCF2OAoTH-iEqT3EVXrJ5_lU-9CVwDVAb_h1FFTY',
   useSimulatedCloud: false,
   autoUpload: true,
   maxVideoDurationMinutes: 10,

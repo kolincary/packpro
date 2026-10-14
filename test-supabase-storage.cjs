@@ -3,8 +3,8 @@ const { createClient } = require('@supabase/supabase-js');
 async function testSupabaseStorage() {
   console.log('Testing Supabase Storage upload...');
 
-  const supabaseUrl = 'https://zyhkgasqwcmpxydndbzw.supabase.co';
-  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp5aGtnYXNxd2NtcHh5ZG5kYnp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk4NTYwMDAsImV4cCI6MjAyNTQzMjAwMH0.sampleKeyHash';
+  const supabaseUrl = 'https://hzcrmjmtheybcsbaxzmt.supabase.co';
+  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh6Y3Jtam10aGV5YmNzYmF4em10Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE5Mjk4NzcsImV4cCI6MjEwNzUwNTg3N30.9fSfCF2OAoTH-iEqT3EVXrJ5_lU-9CVwDVAb_h1FFTY';
   
   const supabase = createClient(supabaseUrl, supabaseKey);
 
